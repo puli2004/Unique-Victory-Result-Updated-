@@ -7,7 +7,7 @@
 - [ARCropolis 1.1.3 or higher](https://github.com/Raytwo/ARCropolis/releases/latest)
 - [Skyline (Should come with ARCropolis)](https://github.com/skyline-dev/skyline/releases/tag/beta)
 - [Smasline_hook](https://github.com/blu-dev/smashline_hook/releases/tag/1.1.1)
-- [NRO Hook (master)](https://github.com/ultimate-research/nro-hook-plugin/releases/tag/master)
+- [NRO Hook 0.3](https://github.com/ultimate-research/nro-hook-plugin/releases/tag/v0.3.0)
 
 ## Setup
 Download the latest version of this plugin and put it in:

@@ -1,11 +1,12 @@
 # Unique-Victory-Result-Updated-
 
 
-#Copied from Coolsonickirby Unique-Victory Updated by Puli2004 and Wuboy
+#Copied from Coolsonickirby Unique-Victory Updated by Puli2004 and Wuboy. Edited by Puli2004
+#Discord:Puli2004#8377
 ## Prerequisites
 - [ARCropolis 1.1.3 or higher](https://github.com/Raytwo/ARCropolis/releases/latest)
 - [Skyline (Should come with ARCropolis)](https://github.com/skyline-dev/skyline/releases/tag/beta)
-- [ACMD Hook (master)](https://github.com/ultimate-research/acmd_hook/releases/tag/master)
+- [Smasline_hook](https://github.com/blu-dev/smashline_hook/releases/tag/1.1.1)
 - [NRO Hook (master)](https://github.com/ultimate-research/nro-hook-plugin/releases/tag/master)
 
 ## Setup

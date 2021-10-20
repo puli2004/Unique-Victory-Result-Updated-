@@ -60,8 +60,8 @@ default="Brawl"
 -Lower your maps tris and edit it
 
 -This is not on our end. Really we think it might be nro_hook or smashline_hook causing this problem. Not the mod. 
-Also please do not go to the developers and ask them to fix it. We really don't know as this mod only replaces.
+```Also please do not go to the developers and ask them to fix it. We really don't know as this mod only replaces.
 It could be in their end or it could be from our end.
 We don't know as the old version never had this problem till Sora came out.
-
+```
 ## If any problems report it and I'll see what happening

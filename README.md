@@ -2,7 +2,7 @@
 
 
 #Copied from Coolsonickirby Unique-Victory Updated by Puli2004 and Wuboy. Edited by Puli2004
-#Discord:Puli2004#8377
+#Discord:Puli2004#8377 WuBoy#0238
 ## Prerequisites
 - [ARCropolis 1.1.3 or higher](https://github.com/Raytwo/ARCropolis/releases/latest)
 - [Skyline (Should come with ARCropolis)](https://github.com/skyline-dev/skyline/releases/tag/beta)
@@ -44,3 +44,21 @@ c01="bob"
 [sonic]
 default="Brawl"
 ```
+
+## Reason for crash
+
+-All Default stage files are missing
+
+-Too many tris are getting loaded
+
+-Switch went to sleepmode due to runtime process stopping 
+
+## Fixes
+
+-Put all Default stage files in VictoryStage
+
+-Lower your maps tris and edit it
+
+-This is not on our end. Really we think it might be nro_hook or smashline_hook causing this problem. Not the mod.
+
+## If any problems report it and I'll see what happening

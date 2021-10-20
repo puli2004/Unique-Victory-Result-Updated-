@@ -64,13 +64,8 @@ default="Brawl"
 
 -Lower your maps tris and edit it
 
--This is not on our end. Really we think it might be nro_hook or smashline_hook causing this problem. Not the mod. 
-```
-Also please do not go to the developers and ask them to fix it. We really don't know as this mod only replaces.
-It could be in their end or it could be from our end.
-We don't know as the old version never had this problem till Sora came out.
-We should be thankful that it works and this mod would not be possible without them working on these tools we use.
-```
+-This is not on our part but in arcropolis part. Turn off debug mode. HOW? Turn true to false on the debug area.
+
 ## If any problems report it and I'll see what happening
 
 ##If anyone doesn't know their code names go here

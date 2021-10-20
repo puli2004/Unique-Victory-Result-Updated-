@@ -1,5 +1,10 @@
 # Unique-Victory-Result-Updated-
+##Original Author
+- Coolsonickirby
 
+##Updated Author
+- Puli2004
+- Wuboy
 
 #Copied from Coolsonickirby Unique-Victory Updated by Puli2004 and Wuboy. Edited by Puli2004
 #Discord:Puli2004#8377 WuBoy#0238
@@ -67,3 +72,6 @@ We don't know as the old version never had this problem till Sora came out.
 We should be thankful that it works and this mod would not be possible without them working on these tools we use.
 ```
 ## If any problems report it and I'll see what happening
+
+##If anyone doesn't know their code names go here
+-[Charater Code names](https://gamebanana.com/tools/6934)

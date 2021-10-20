@@ -148,9 +148,8 @@ pub fn get_character_name(id: i32) -> &'static str {
         89 => "edge",
         90 => "eflame",
         91 => "elight",
-		92 => "demon",
-		93 => "trail",
-		109 => "koopag",     //Most likely not the right id but it worth a shot
+	92 => "demon",
+	93 => "trail",
         110 => "ice_climber",
         111 => "zenigame",
         112 => "fushigisou",

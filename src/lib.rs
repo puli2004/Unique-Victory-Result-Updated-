@@ -288,22 +288,19 @@ fn stream_callback(hash: u64) -> Option<String> {
             "{}/{}/{}",
             STARTING_DIR,
             folder,
-            &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().normal_path
+            &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().game_path
         );
 
-        let original_file = format!(
-            "{}/Default/{}",
-            STARTING_DIR,
-            &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().normal_path
-        );
         println!("Physical Path: {}", physical_path);
 
-        if std::fs::metadata(&physical_path).is_ok() {
-            Some(physical_path)
-        }else if std::fs::metadata(&original_file).is_ok() {
-            Some(original_file)
-        }else {
-            None
+        match std::fs::read(physical_path) {
+            Ok(file) => {
+                data[..file.len()].copy_from_slice(&file);
+                Some(file.len())
+            }
+            Err(_err) => {
+                load_original_file(hash, data)
+            }
         }
     }
 }

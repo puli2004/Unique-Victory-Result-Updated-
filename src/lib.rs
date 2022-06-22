@@ -1,3 +1,4 @@
+
 #![feature(proc_macro_hygiene)]
 
 mod config;
@@ -9,7 +10,6 @@ use smash::lib::lua_const::*;
 use smash::lua2cpp::L2CFighterCommon;
 use std::{collections::HashMap, fs::metadata, path::PathBuf, sync::Mutex};
 use walkdir::WalkDir;
-use smashline::*;
 
 lazy_static::lazy_static! {
     pub static ref FILES_CONFIG: Mutex<HashMap<u64, EntryInfo>> = Mutex::new(HashMap::new());
@@ -32,7 +32,6 @@ pub static mut VICTOR: usize = 0;
 pub static mut FIGHTER_MANAGER_ADDR: usize = 0;
 
 // Use this for general per-frame fighter-level hooks
-#[fighter_frame_callback]
 pub fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
     unsafe {
         let lua_state = fighter.lua_state_agent;
@@ -148,8 +147,8 @@ pub fn get_character_name(id: i32) -> &'static str {
         89 => "edge",
         90 => "eflame",
         91 => "elight",
-	92 => "demon",
-	93 => "trail",
+        92 => "demon",
+        93 => "trail",
         110 => "ice_climber",
         111 => "zenigame",
         112 => "fushigisou",
@@ -212,11 +211,6 @@ fn file_callback(hash: u64, data: &mut [u8]) -> Option<usize> {
             &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().game_path
         );
 
-        let original_file = format!(
-            "{}/Default/{}",
-            STARTING_DIR,
-            &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().game_path
-        );
         println!("Physical Path: {}", physical_path);
 
         match std::fs::read(physical_path) {
@@ -225,14 +219,7 @@ fn file_callback(hash: u64, data: &mut [u8]) -> Option<usize> {
                 Some(file.len())
             }
             Err(_err) => {
-                match std::fs::read(original_file){
-                    Ok(default) => {
-                        data[..default.len()].copy_from_slice(&default);
-        
-                        Some(default.len())
-                    },
-                    Err(_err) => None
-                }
+                load_original_file(hash, data)
             }
         }
     }
@@ -288,19 +275,15 @@ fn stream_callback(hash: u64) -> Option<String> {
             "{}/{}/{}",
             STARTING_DIR,
             folder,
-            &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().game_path
+            &FILES_CONFIG.lock().unwrap().get(&hash).unwrap().normal_path
         );
 
         println!("Physical Path: {}", physical_path);
 
-        match std::fs::read(physical_path) {
-            Ok(file) => {
-                data[..file.len()].copy_from_slice(&file);
-                Some(file.len())
-            }
-            Err(_err) => {
-                load_original_file(hash, data)
-            }
+        if std::fs::metadata(&physical_path).is_ok() {
+            Some(physical_path)
+        }else {
+            None
         }
     }
 }
@@ -387,5 +370,5 @@ pub fn main() {
         CHARCTER_CONFIG.lock().unwrap().entries
     );
     
-    smashline::install_agent_frame_callbacks!(once_per_fighter_frame);
+    acmd::add_custom_hooks!(once_per_fighter_frame);
 }
